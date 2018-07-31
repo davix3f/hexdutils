@@ -1,7 +1,7 @@
 # hexutils
 
 **Hexutils** is a little (little little little) Python library to deal with hexadecimals.
-Int to hex, hex to int, operations between hex.
+Int to hex, hex to int, text-to-hex, operations between hex.
 
 The code is in **dev** branch.
 
@@ -9,7 +9,7 @@ The code is in **dev** branch.
 
 Function names are very clear by themselves, but here's a guide.
 
-##### intohex (<int>number, [hex_prefix, uppercase])
+### intohex (<int>number, [hex_prefix, uppercase])
   Returns a the hex value of a number as a string.
   * **Arguments**:
     * **Mandatory**:
@@ -17,12 +17,23 @@ Function names are very clear by themselves, but here's a guide.
     * **Optional**:
       * `bool` hex_prefix: adds "0x" at the beginning of the output, like the native `hex` Python function. Set as *False* by default;
       * `bool` uppercase: every letter in the output is uppercased. Set as *False* by default;
-##### hextoint (<str>target)
+### hextoint (<str>target)
   Returns the value of an hex as an integer.
   * **Arguments**:
     * **Mandatory**:
       * `str` target: the hex value to convert. Accepts also "0x" values;
-##### Operations
+### abctohex (<str>target, <str>conversion, <list>encrypt)
+  Returns text converted in hex. Encryption available.
+  * **Arguments**
+    * **Mandatory**:
+      * `str` target: text to convert;
+    * **Optional**:
+      * `str` conversion: the letter values to be used. "alphabet" uses the position of each letter in the alphabet to assign an integer value (e.g a=1, b=2, etc.). "ord" uses the result of `ord(letter)` (e.g `ord("a") = 97`). Set as *"alphabet"* by default:
+      * `list` encrypt: list with encryption values. First item (greater or equal than 5) represents the range limit for `randint`. Second item (at least 0, bigger is better) is the number of iterations to perform on the string. Set as *False* by default.
+    
+
+
+### Operations
 
 |   Function	|  Operator 	|
 |:-:	         |:-:	|
