@@ -9,7 +9,7 @@ The code is in **dev** branch.
 
 Function names are very clear by themselves, but here's a guide.
 
-### intohex (<int>number, [hex_prefix, uppercase])
+### intohex (\<int\>number, [\<bool\>hex_prefix, \<bool\>uppercase])
   Returns a the hex value of a number as a string.
   * **Arguments**:
     * **Mandatory**:
@@ -17,12 +17,12 @@ Function names are very clear by themselves, but here's a guide.
     * **Optional**:
       * `bool` hex_prefix: adds "0x" at the beginning of the output, like the native `hex` Python function. Set as *False* by default;
       * `bool` uppercase: every letter in the output is uppercased. Set as *False* by default;
-### hextoint (<str>target)
+### hextoint (\<str\>target)
   Returns the value of an hex as an integer.
   * **Arguments**:
     * **Mandatory**:
       * `str` target: the hex value to convert. Accepts also "0x" values;
-### abctohex (<str>target, <str>conversion, <list>encrypt)
+### abctohex (\<str\>target, [\<str\>conversion, \<list\>encrypt])
   Returns text converted in hex. Encryption available.
   * **Arguments**
     * **Mandatory**:
@@ -43,7 +43,7 @@ Function names are very clear by themselves, but here's a guide.
 |**hex_divide**  |  //  |
 |**hex_floor**   |  %   |
  
- Usage: `operation(value_one, value_two, [hex_output, hex_output_prefix. hex_output_upper])` 
+ Usage: `operation(<str>value_one, <str>value_two, [<bool>hex_output, <bool>hex_output_prefix. <bool>hex_output_upper])` 
  
  The arguments for those functions are all the same:
   * **Mandatory**:
