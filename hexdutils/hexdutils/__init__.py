@@ -55,7 +55,7 @@ def hextoint(target):
         return(sum(decimals))
 
 
-def abctohex(target, conversion="alphabet", encrypt=False):
+def abctohex(target, conversion="alphabet", verbose=False, encrypt=False):
     if type(target) is not str:
         raise ValueError("Target must be string")
     result_list = []
@@ -63,11 +63,11 @@ def abctohex(target, conversion="alphabet", encrypt=False):
 
     if conversion == "alphabet":
         for item in target:
-                if item in str(list(range(0, 10))):
+                if item in [str(x) for x in list(range(0, 10))]:
                     result_list.append(item)
                 else:
-                    result_list.append(intohex(alphabet.index(item.lower())))
-                #print(item, alphabet.index(item), intohex(alphabet.index(item), True))
+                    result_list.append(intohex(__alphabet.index(item.lower())))
+                #print(item, __alphabet.index(item), intohex(__alphabet.index(item), True))
         #print("".join(item for item in result_list))
         result_str = "".join(item for item in result_list)
 
@@ -96,13 +96,16 @@ def abctohex(target, conversion="alphabet", encrypt=False):
         counter = 0
         original_result_str = result_str
 
-        while(counter <= encrypt[1]):
+        while(counter < encrypt[1]):
             randoval = str(randint(2, encrypt[0]))
             #print("Iteration #" + str(counter) + ":", result_str, "*", randoval)
             #print(hex_multiply(result_str, randoval, True ), "=", hex_multiply(result_str, randoval, False))
             result_str = hex_multiply(result_str, randoval, True )
             counter += 1
-        print("Executed", counter, "iteration(s). Result is:\n" + result_str, "\nFrom:", original_result_str)
+        if verbose:
+           print("Executed", counter, "iteration(s). Result is:\n" + result_str, "\nFrom:", original_result_str)
+        return(result_str)
+    return(result_str)
 
 
 
