@@ -7,7 +7,7 @@ __hex_letters= {"a":10,
         "e":14,
         "f":15}
 
-alphabet = [" "]+[x for x in "abcdefghijklmnopqrstuvwxyz"]
+__alphabet = [" "]+[x for x in "abcdefghijklmnopqrstuvwxyz"]
 
 def intohex(number, hex_prefix=False, uppercase=False):
     if type(number) is not int:
