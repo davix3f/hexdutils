@@ -1,6 +1,6 @@
-# hexutils
+# hexdutils
 
-**Hexutils** is a little (little little little) Python library to deal with hexadecimals.
+**hexdutils** is a little (little little little) Python library to deal with hexadecimals.
 Int to hex, hex to int, text-to-hex, operations between hex.
 
 The code is in **dev** branch.
