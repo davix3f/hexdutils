@@ -28,7 +28,7 @@ upload:
 # in ~/.pypirc
 # do 'make upload PY=[python version you want to use]
 # if you want to use a different version from 3
-	@echo python$(PY) setup.py sdist upload
+	@python$(PY) setup.py sdist upload
 
 clean:
 # remove generated directories
