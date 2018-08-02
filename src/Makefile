@@ -19,16 +19,17 @@ pack_py:
 
 upload_twine:
 # upload packages to pypi.
-# do 'make upload UPLOAD_URL=[custom url]' to upload to another pypi url
+# do 'make upload_twine UPLOAD_URL=[custom url]' to upload to another pypi url
 	@echo "Trying to upload package to $(UPLOAD_URL)\n" 
-	@twine upload --repository-url $(UPLOAD_URL) dist/*
+	@twine upload --repository-url $(UPLOAD_URL) dist/* && echo "\nUpload successful"
+    clean
 
 upload:
 # upload packages to pypi using the configuration
 # in ~/.pypirc
 # do 'make upload PY=[python version you want to use]
 # if you want to use a different version from 3
-	@python$(PY) setup.py sdist upload
+	@python$(PY) setup.py sdist upload && echo "\nUpload successful"
 
 clean:
 # remove generated directories
