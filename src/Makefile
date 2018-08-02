@@ -17,11 +17,18 @@ pack_py:
 # do 'make pack_py PY=[py version you want to use] to use a different python version
 	@python$(PY) setup.py sdist
 
-upload:
+upload_twine:
 # upload packages to pypi.
 # do 'make upload UPLOAD_URL=[custom url]' to upload to another pypi url
 	@echo "Trying to upload package to $(UPLOAD_URL)\n" 
 	@twine upload --repository-url $(UPLOAD_URL) dist/*
+
+upload:
+# upload packages to pypi using the configuration
+# in ~/.pypirc
+# do 'make upload PY=[python version you want to use]
+# if you want to use a different version from 3
+	@echo python$(PY) setup.py sdist upload
 
 clean:
 # remove generated directories
