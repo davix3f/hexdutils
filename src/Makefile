@@ -22,7 +22,7 @@ upload_twine:
 # do 'make upload_twine UPLOAD_URL=[custom url]' to upload to another pypi url
 	@echo "Trying to upload package to $(UPLOAD_URL)\n" 
 	@twine upload --repository-url $(UPLOAD_URL) dist/* && echo "\nUpload successful"
-    clean
+	clean
 
 upload:
 # upload packages to pypi using the configuration
