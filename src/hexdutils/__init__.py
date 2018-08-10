@@ -55,7 +55,7 @@ def hextoint(target):
         return(sum(decimals))
 
 
-def abctohex(target, conversion="alphabet", verbose=False, encrypt=False):
+def abctohex(target, conversion="ord", verbose=False, encrypt=False):
     if type(target) is not str:
         raise ValueError("Target must be string")
     result_list = []
@@ -104,7 +104,6 @@ def abctohex(target, conversion="alphabet", verbose=False, encrypt=False):
             counter += 1
         if verbose:
             print("Executed", counter, "iteration(s). Result is:\n" + result_str, "\nFrom:", original_result_str)
-        return(result_str)
     return(result_str)
 
 
