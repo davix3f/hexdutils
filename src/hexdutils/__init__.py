@@ -83,14 +83,19 @@ def abctohex(target, conversion="ord", verbose=False, randomize=False):
     if randomize is not False:
         if (type(randomize) is not list):
             raise ValueError("randomize value has to be a list")
-        if (len(randomize) < 2) or (len(randomize) > 2):
-            raise ValueError("randomize must contain two integers: [max_range>5, number_of_iterations]")
+        if (len(randomize) < 3) or (len(randomize) > 3):
+            raise ValueError("randomize must have three elements: [max_range>5, number_of_iterations, hex_operation(hex_add, hex_subtract or hex_multiply)]")
         if (type(randomize[0]) is not int) or (type(randomize[1]) is not int):
             raise ValueError("randomize list items have to be integers")
         if randomize[0] < 5:
             raise ValueError("randomize first argument has to be greater than 4")
         if randomize[1] < 0:
             raise ValueError("randomize second argument value has to be at least 0")
+        try:
+            if (randomize[2] in (hex_add, hex_subtract, hex_multiply)) == False:
+                raise ValueError("randomize third element must be hex_add, hex_subtract or hex_multiply")
+        except IndexError:
+            raise ValueError("randomize must have three elements: [max_range>5, number_of_iterations, hex_operation(hex_add, hex_subtract or hex_multiply)]")
 
         result_list.clear()
         counter = 0
@@ -100,7 +105,7 @@ def abctohex(target, conversion="ord", verbose=False, randomize=False):
             randoval = str(randint(2, randomize[0]))
             # print("Iteration #" + str(counter) + ":", result_str, "*", randoval)
             # print(hex_multiply(result_str, randoval, True ), "=", hex_multiply(result_str, randoval, False))
-            result_str = hex_multiply(result_str, randoval, True)
+            result_str = randomize[2](result_str, randoval, True)
             counter += 1
         if verbose:
             print("Executed", counter, "iteration(s). Result is:\n" + result_str, "\nFrom:", original_result_str)
