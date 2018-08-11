@@ -55,7 +55,7 @@ def hextoint(target):
         return(sum(decimals))
 
 
-def abctohex(target, conversion="ord", verbose=False, encrypt=False):
+def abctohex(target, conversion="ord", verbose=False, randomize=False):
     if type(target) is not str:
         raise ValueError("Target must be string")
     result_list = []
@@ -80,24 +80,24 @@ def abctohex(target, conversion="ord", verbose=False, encrypt=False):
     else:
         raise ValueError("conversion has to be \'alphabet\' or \'ord\'")
 
-    if encrypt is not False:
-        if (type(encrypt) is not list):
-            raise ValueError("encrypt value has to be a list")
-        if (len(encrypt) < 2) or (len(encrypt) > 2):
-            raise ValueError("encrypt must contain two integers: [max_range>5, number_of_iterations]")
-        if (type(encrypt[0]) is not int) or (type(encrypt[1]) is not int):
-            raise ValueError("encrypt list items have to be integers")
-        if encrypt[0] < 5:
-            raise ValueError("encrypt first argument has to be greater than 4")
-        if encrypt[1] < 0:
-            raise ValueError("encrypt second argument value has to be at least 0")
+    if randomize is not False:
+        if (type(randomize) is not list):
+            raise ValueError("randomize value has to be a list")
+        if (len(randomize) < 2) or (len(randomize) > 2):
+            raise ValueError("randomize must contain two integers: [max_range>5, number_of_iterations]")
+        if (type(randomize[0]) is not int) or (type(randomize[1]) is not int):
+            raise ValueError("randomize list items have to be integers")
+        if randomize[0] < 5:
+            raise ValueError("randomize first argument has to be greater than 4")
+        if randomize[1] < 0:
+            raise ValueError("randomize second argument value has to be at least 0")
 
         result_list.clear()
         counter = 0
         original_result_str = result_str
 
-        while(counter < encrypt[1]):
-            randoval = str(randint(2, encrypt[0]))
+        while(counter < randomize[1]):
+            randoval = str(randint(2, randomize[0]))
             # print("Iteration #" + str(counter) + ":", result_str, "*", randoval)
             # print(hex_multiply(result_str, randoval, True ), "=", hex_multiply(result_str, randoval, False))
             result_str = hex_multiply(result_str, randoval, True)

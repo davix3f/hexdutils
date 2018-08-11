@@ -22,14 +22,14 @@ Function names are very clear by themselves, but here's a guide.
   * **Arguments**:
     * **Mandatory**:
       * `str` target: the hex value to convert. Accepts also "0x" values;
-### abctohex (\<str\>target, [\<str\>conversion, \<list\>encrypt])
-  Returns text converted in hex. Encryption available.
+### abctohex (\<str\>target, [\<str\>conversion, \<list\>randomize])
+  Returns text converted in hex. Randomization available.
   * **Arguments**
     * **Mandatory**:
       * `str` target: text to convert;
     * **Optional**:
       * `str` conversion: the letter values to be used. "alphabet" uses the position of each letter in the alphabet to assign an integer value (e.g a=1, b=2, etc.). "ord" uses the result of `ord(letter)` (e.g `ord("a") = 97`). Set as *"ord"* by default:
-      * `list` encrypt: list with encryption values. First item (greater or equal than 5) represents the range limit for `randint`. Second item (at least 0, bigger is better) is the number of iterations to perform on the string. Set as *False* by default.
+      * `list` randomize: list with randomization values. First item (greater or equal than 5) represents the range limit for `randint`. Second item (at least 0, bigger is better) is the number of iterations to perform on the string. Set as *False* by default.
     
 
 
