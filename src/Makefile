@@ -2,7 +2,7 @@ CURRENT_VERSION := $(shell cat setup.py | grep version | egrep -o '([0-9]\.*)+')
 PY = 3
 UPLOAD_URL = "https://upload.pypi.org/legacy/"
 
-version:
+getversion:
 	@echo "Current version of the package is $(CURRENT_VERSION)"
 
 %:
