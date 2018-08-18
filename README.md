@@ -17,11 +17,13 @@ Function names are very clear by themselves, but here's a guide.
     * **Optional**:
       * `bool` hex_prefix: adds "0x" at the beginning of the output, like the native `hex` Python function. Set as *False* by default;
       * `bool` uppercase: every letter in the output is uppercased. Set as *False* by default;
+
 ### hextoint (`str` target)
   Returns the value of an hex as an integer.
   * **Arguments**:
     * **Mandatory**:
       * `str` target: the hex value to convert. Accepts also "0x" values;
+
 ### abctohex (`str` target, `str` conversion, [`bool` verbose, `bool`|`str` prefix, `bool`|`str` individual_prefix])
   Returns text converted in hex. Randomization available.
   * **Arguments**
@@ -39,7 +41,10 @@ Function names are very clear by themselves, but here's a guide.
       Like `prefix`, you can set this value to a custom prefix string, and use it instead of "0x". **Requires `prefix=True` to work**.
       Set as *False* by default
 
-
+### hextoabc (`str` target)
+  * **Arguments**:
+   * **Mandatory**:
+      * `str` target: hex value to convert to text.
 
 ### Operations
 
