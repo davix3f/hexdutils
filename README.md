@@ -45,8 +45,8 @@ Function names are very clear by themselves, but here's a guide.
 
 ### hextoabc (`str` target)
   * **Arguments**:
-   * **Mandatory**:
-      * `str` target: hex value to convert to text.
+      * **Mandatory**:
+          * `str` target: hex value to convert to text.
 
 ### Operations
 
