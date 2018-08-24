@@ -2,7 +2,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/hexdutils.svg)](https://pypi.python.org/pypi/hexdutils/)
 [![GitHub license](https://img.shields.io/github/license/davix3f/hexdutils.svg)](https://github.com/davix3f/hexdutils/blob/master/README.md)
 
-**hexdutils** is a little (little little little) Python library to deal with hexadecimals.
+**hexdutils** is a small but useful Python library to deal with hexadecimals.
 Int to hex, hex to int, text-to-hex, operations between hex.
 
 The code is in **dev** branch.
