@@ -10,7 +10,7 @@ setup(
     author = "davix3f",
     description = "Python library to deal with hexadecimals",
     author_email = "davide_fiorito@libero.it",
-    version = "1.5",
+    version = "1.5.1",
     packages = find_packages(),
     long_description = readme_description,
     long_description_content_type = "text/markdown",
