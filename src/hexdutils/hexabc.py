@@ -7,13 +7,12 @@ from __hex_constants__ import __hex_letters, __alphabet
 from intohex import _intohex as intohex
 from hextoint import _hextoint as hextoint
 
+
 def packtwo(target, prefix=False):
     if type(target) != str:
         raise ValueError("Argument must be string")
     if type(target) not in (bool, str):
         raise ValueError("prefix must be string or boolean")
-    if (len(target) % 2 != 0) and (prefix == False):
-        raise ValueError("Length of target is not even. The target is not hex")
     if prefix != False:
         if prefix == True:
             target = target[2:]
@@ -26,6 +25,9 @@ def packtwo(target, prefix=False):
         hex_pairs.append(target[_x:_y])
         _x = _y
         _y += 2
+    if (len(target) % 2 != 0):
+        if any(item==target[-1] for item in hex_pairs) == False:
+            hex_pairs.append(target[-1])
     return(hex_pairs)
 
 
