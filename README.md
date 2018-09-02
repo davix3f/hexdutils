@@ -69,3 +69,15 @@ Function names are very clear by themselves, but here's a guide.
   * **Optional**:
     - `bool` hex\_output\_prefix: If set as True, adds "0x" at the beginning of the output. Set as *False* by default;
     - `bool` hex\_output\_upper: If set as True, every letter in the output is uppercased. Set as *False* by default;
+
+
+## The module is not working as it should
+Open an issue 🆘
+
+## I fixed something or I'd like to contribute
+Open a pull request 📥
+
+## Contact info
+📧 [davide_fiorito@libero.it](mailto:davide_fiorito@libero.it)
+
+📲 [Telegram contact](https://t.me/pecciolino)
