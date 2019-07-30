@@ -55,8 +55,10 @@ Function names are very clear by themselves, but here's a guide.
 |**hex_add**     |  +   |
 |**hex_subtract**|  -   |
 |**hex_multiply**|  *   |
-|**hex_divide**  |  //  |
-|**hex_floor**   |  %   |
+|**hex_divide**  |  /   |
+|**hex_floor**   |  //  |
+|**hex_mod**     |  %   |
+|**hex_power**   |  **  |
 
  Usage: `operation(<str>value_one, <str>value_two, [<bool>hex_output, <bool>hex_output_prefix. <bool>hex_output_upper])`
 
