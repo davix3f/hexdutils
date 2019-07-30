@@ -14,4 +14,6 @@ from hexops import _hex_add as hex_add,\
                    _hex_subtract as hex_subtract,\
                    _hex_multiply as hex_multiply,\
                    _hex_divide as hex_divide,\
-                   _hex_floor as hex_floor
+                   _hex_floor as hex_floor,\
+                   _hex_mod as hex_mod,\
+                   _hex_power as hex_power

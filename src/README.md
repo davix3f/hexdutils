@@ -30,7 +30,7 @@ Function names are very clear by themselves, but here's a guide.
     * **Optional**:
       * `str` conversion: the letter values to be used. "alphabet" uses the position of each letter in the alphabet to assign an integer value (e.g a=1, b=2, etc.). "ord" uses the result of `ord(letter)` (e.g `ord("a") = 97`). Set as *"ord"* by default:
       * `list` randomize: list with randomization values. First item (greater or equal than 5) represents the range limit for `randint`. Second item (at least 0, bigger is better) is the number of iterations to perform on the string. Third item in the hex operation you want to set to randomize the output. Set as *False* by default.
-    
+
 
 
 ### Operations
@@ -40,17 +40,19 @@ Function names are very clear by themselves, but here's a guide.
 |**hex_add**     |  +   |
 |**hex_subtract**|  -   |
 |**hex_multiply**|  *   |
-|**hex_divide**  |  //  |
-|**hex_floor**   |  %   |
- 
- Usage: `operation(<str>value_one, <str>value_two, [<bool>hex_output, <bool>hex_output_prefix. <bool>hex_output_upper])` 
- 
+|**hex_divide**  |  /   |
+|**hex_floor**   |  //  |
+|**hex_mod**     |  %   |
+|**hex_power**   |  **  |
+
+ Usage: `operation(<str>value_one, <str>value_two, [<bool>hex_output, <bool>hex_output_prefix. <bool>hex_output_upper])`
+
  The arguments for those functions are all the same:
   * **Mandatory**:
     - `str`  value\_one;
     - `str`  value\_two;
     - `bool` hex_output: if set as True, the operation result will be returned as an hex value. If set as False, an integer will be returned;
-  
+
   * **Optional**:
     - `bool` hex\_output\_prefix: If set as True, adds "0x" at the beginning of the output. Set as *False* by default;
     - `bool` hex\_output\_upper: If set as True, every letter in the output is uppercased. Set as *False* by default;
