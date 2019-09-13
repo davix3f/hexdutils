@@ -9,14 +9,18 @@ from hextoint import _hextoint as hextoint
 
 
 def packtwo(target, prefix=False):
-    if type(target) != str:
-        raise ValueError("Argument must be string")
+
+# ASCII letters/symbols hexcodes range from 20 to 7F, so they're expressed in
+# hexs made of two items. This function returns a list made of those pairs
+
+    if not isinstance(target, str):
+        raise TypeError("Argument must be string (is %s)" % type(target))
     if type(target) not in (bool, str):
         raise ValueError("prefix must be string or boolean")
     if prefix != False:
         if prefix == True:
             target = target[2:]
-        if type(prefix) is str:
+        if isinstance(prefix, str):
             target = target[len(prefix):]
     hex_pairs = []
     _x = 0
