@@ -37,13 +37,13 @@ def packtwo(target, prefix=False):
 
 def _abctohex(target, conversion="ord", verbose=False, prefix=False, individual_prefix=False):
     if type(target) != str:
-        raise ValueError("Target must be string")
+        raise TypeError("Argument must be string (is %s)" % type(target))
     if type(verbose) not in (int, bool):
-        raise ValueError("Verbose must be bool or int")
+        raise TypeError("Verbose must be bool or int (is %s)" % type(verbose))
     if type(prefix) not in (bool, str):
-        raise ValueError("prefix must be bool or string")
+        raise TypeError("prefix must be bool or string (is %s)" % type(prefix))
     if type(individual_prefix) not in (bool, str):
-        raise ValueError("individual_prefix must be bool or string")
+        raise TypeError("individual_prefix must be bool or string (is %s)" % type(individual_prefix))
 
 
     result_list = []
@@ -55,15 +55,11 @@ def _abctohex(target, conversion="ord", verbose=False, prefix=False, individual_
                     result_list.append(item)
                 else:
                     result_list.append(intohex(__alphabet.index(item.lower())))
-                # print(item, __alphabet.index(item), intohex(__alphabet.index(item), True))
-        # print("".join(item for item in result_list))
         result_str = "".join(item for item in result_list)
 
     elif conversion is "ord":
         for item in target:
                 result_list.append(intohex(ord(item)))
-                # print(item, ord(item), intohex(ord(item), True))
-        # print("".join(item for item in result_list))
         result_str = "".join(item for item in result_list)
     else:
         raise ValueError("conversion has to be \'alphabet\' or \'ord\'")
